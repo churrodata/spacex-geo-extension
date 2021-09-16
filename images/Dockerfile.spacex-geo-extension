@@ -1,0 +1,5 @@
+FROM fedora:latest
+
+COPY build/spacex-geo-extension /usr/local/bin
+
+ENTRYPOINT ["/usr/local/bin/spacex-geo-extension"]
