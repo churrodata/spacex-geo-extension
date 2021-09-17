@@ -16,6 +16,9 @@ push:
 compile-extension:
 	protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=require_unimplemented_servers=false:. --go-grpc_opt=paths=source_relative rpc/extension/spacex-geo-extension.proto
 	go build -o build/spacex-geo-extension cmd/spacex-geo-extension/spacex-geo-extension.go
+build-extension-local: 
+	go build -o build/spacex-geo-extension cmd/spacex-geo-extension/spacex-geo-extension.go
+	docker build -f ./images/Dockerfile.spacex-geo-extension -t docker.io/churrodata/spacex-geo-extension .
 build-extension: 
 	go build -o build/spacex-geo-extension cmd/spacex-geo-extension/spacex-geo-extension.go
 	#docker build -f ./images/Dockerfile.spacex-geo-extension -t docker.io/churrodata/spacex-geo-extension .

@@ -26,7 +26,7 @@ func main() {
 	log.Info().Msg("spacex-geo-extension")
 
 	debug := flag.Bool("debug", false, "debug flag")
-	log.Info().Msg(fmt.Sprintf("debug set to %t\n", debug))
+	log.Info().Msg(fmt.Sprintf("debug set to %v", debug))
 	serviceCertPath := flag.String("servicecert", "", "path to service cert files e.g. service.crt")
 	dbCertPath := flag.String("dbcert", "", "path to database cert files (e.g. ca.crt)")
 
